@@ -1,6 +1,6 @@
 import cv2
 
-from ImagePreproces import imageBase64 as convrt
+from ImageConversion import imageBase64 as convrt
 from InterfaceManage import getResponseError, json_names
 from InformationExtraction import extract_information
 # To process passport image uploaded from camera

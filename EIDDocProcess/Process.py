@@ -2,7 +2,7 @@
 import cv2
 import passporteye
 import numpy
-from ImagePreproces import imageBase64 as convrt
+from ImageConversion import imageBase64 as convrt
 from ImplementExtraction import formatPassportEyeData
 from InterfaceManage import getResponseError
 from PreProcess import preprocessCamUpload, preprocessFileUpload

@@ -1,51 +1,8 @@
 import cv2
 import numpy as np
 from VisaDocProcess.detectROI.Barcode import getBarcodeBox
+from FaceDetection import face_detection
 import math
-
-
-# __X_UP_MARGIN__ = float(25)/2400
-# __X_DN_MARGIN__ = float(30)/2400
-# __Y_UP_MARGIN__ = float(40)/2400
-# __Y_DN_MARGIN__ = float(50)/2400
-
-faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-
-
-def getFaceROI(cvImage):
-
-    # faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-
-    global faceCascade
-
-    img = cvImage[:]
-    height, width = img.shape[:2]
-    if len(img.shape) > 2:
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    else:
-        gray = img
-
-    faces = faceCascade.detectMultiScale(
-        gray,
-        scaleFactor=1.1,
-        minNeighbors=5,
-        minSize=(30, 30),
-        flags=cv2.cv.CV_HAAR_SCALE_IMAGE
-    )
-    maxRect = (0,0,0,0)
-    for (x, y, w, h) in faces:
-        if w*h > maxRect[2]*maxRect[3]:
-            maxRect = x, y, w, h
-
-
-
-    if maxRect[2]*maxRect[3] > 1:
-        x, y, w, h = maxRect
-        npRect = np.array([[x,y],[x+w,y],[x,y+h],[x+w,y+h]])
-        return npRect
-
-    else:
-        return None
 
 
 def rotateImagePadded(image, angle):
@@ -122,18 +79,18 @@ def getVisaROI(cvImage):
 
     # Step 1 : get the face detection and barcode detection from the original image
     #          If barcode or face not detected rotate image by 90, barcode works on gradient in x direction so might not get detected if erect at 90 deg
-    faceRect = getFaceROI(cvImage)
+    faceRect = face_detection.getFaceROI(cvImage)
     barcodeRect, angle = getBarcodeBox(cvImage)
     if faceRect is None or barcodeRect is None:
         cvImage = rotateImagePadded(cvImage, -90)
-        faceRect = getFaceROI(cvImage)
+        faceRect = face_detection.getFaceROI(cvImage)
         barcodeRect, angle = getBarcodeBox(cvImage)
 
         if faceRect is None or barcodeRect is None:
             return None
 
     # Temp to view the changes
-    cvImageCopy = cvImage[:]
+    # cvImageCopy = cvImage.copy()
     # cv2.drawContours(cvImageCopy, [faceRect], -1, (0, 255, 0), 3)
     # cv2.drawContours(cvImageCopy, [barcodeRect], -1, (0, 255, 0), 3)
 

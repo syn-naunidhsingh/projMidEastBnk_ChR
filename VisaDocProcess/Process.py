@@ -1,5 +1,5 @@
 import cv2
-from ImagePreproces import imageBase64 as convrt
+from ImageConversion import imageBase64 as convrt
 from PreProcess import preProcessROICrop, preProcessImageEnhance
 from InterfaceManage import getResponseError
 from ImplementExtraction import getVisaTextExtraction
