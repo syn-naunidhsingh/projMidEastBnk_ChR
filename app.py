@@ -18,9 +18,6 @@ from CompareEngine import compare_PP2EID, compare_PP2Visa, compare_PP2STL
 
 app = Flask(__name__)
 
-
-
-
 # Function to extract details from the documents:
 # Input JSON format :
 #           "document_image" : "base_64 Data" - Entire Image encoded in Base 64 format
