@@ -1,0 +1,2 @@
+from ImgPreprocessIdDoc import getPassportRect
+
