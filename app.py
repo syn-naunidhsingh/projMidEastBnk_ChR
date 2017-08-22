@@ -47,12 +47,12 @@ def getDocumentDetails():
                 extracted_data, response_error = PassportDocProcess.Process.processCamUploadImage(document_file)
                 return frame_output(extracted_data, None, response_error)
 
-            if document_type == json_names.__IN_CODE_PASSPORT_FILE__:
+            elif document_type == json_names.__IN_CODE_PASSPORT_FILE__:
                 # Implement OCR on file uploaded passport document.
                 extracted_data, response_error = PassportDocProcess.Process.processFileUploadImage(document_file)
                 return frame_output(extracted_data, None, response_error)
 
-            if document_type == json_names.__IN_CODE_EID_CAM__:
+            elif document_type == json_names.__IN_CODE_EID_CAM__:
                 # Implement OCR on cam uploaded EID document.
                 extracted_data, response_error = EIDDocProcess.Process.processCamUploadImage(document_file)
 
@@ -60,7 +60,7 @@ def getDocumentDetails():
                 match_verification = compare_PP2EID(reference_document_data, extracted_data)
                 return frame_output(extracted_data, match_verification, response_error)
 
-            if document_type == json_names.__IN_CODE_EID_FILE__:
+            elif document_type == json_names.__IN_CODE_EID_FILE__:
                 # Implement OCR on file uploaded EID document.
                 extracted_data, response_error = EIDDocProcess.Process.processFileUploadImage(document_file)
 
@@ -68,7 +68,7 @@ def getDocumentDetails():
                 match_verification = compare_PP2Visa(reference_document_data, extracted_data)
                 return frame_output(extracted_data, match_verification, response_error)
 
-            if document_type == json_names.__IN_CODE_VISA_CAM__:
+            elif document_type == json_names.__IN_CODE_VISA_CAM__:
                 # Implement OCR on cam uploaded Visa document.
                 extracted_data, response_error = VisaDocProcess.Process.processCamUploadImage(document_file)
                 # print extracted_data, response_error
@@ -78,7 +78,7 @@ def getDocumentDetails():
                 return frame_output(extracted_data, match_verification, response_error)
 
 
-            if document_type == json_names.__IN_CODE_VISA_FILE__:
+            elif document_type == json_names.__IN_CODE_VISA_FILE__:
                 # Implement OCR on file uploaded Visa document.
                 extracted_data, response_error = VisaDocProcess.Process.processFileUploadImage(document_file)
 
@@ -86,7 +86,7 @@ def getDocumentDetails():
                 match_verification = compare_PP2Visa(reference_document_data, extracted_data)
                 return frame_output(extracted_data, match_verification, response_error)
 
-            if document_type == json_names.__IN_CODE_STL_CAM__:
+            elif document_type == json_names.__IN_CODE_STL_CAM__:
                 # Implement OCR on cam uploaded Salary Letter document.
 
                 reference_document_data = requestJsonObj[json_names.__IN_REF_DOCUMENT_DATA__]
@@ -95,7 +95,7 @@ def getDocumentDetails():
                 match_verification = compare_PP2STL(extracted_data)
                 return frame_output(extracted_data, match_verification, response_error)
 
-            if document_type == json_names.__IN_CODE_STL_FILE__:
+            elif document_type == json_names.__IN_CODE_STL_FILE__:
                 # Implement OCR on file uploaded Salary Letter document.
 
                 reference_document_data = requestJsonObj[json_names.__IN_REF_DOCUMENT_DATA__]
