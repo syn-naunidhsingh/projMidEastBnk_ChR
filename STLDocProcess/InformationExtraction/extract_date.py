@@ -2,7 +2,7 @@ import cv2
 from STLDocProcess import ocrImage
 import re
 import datetime
-from ManageJson import json_names
+from InterfaceManage import json_names
 
 __MONTHS__ = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december', 'jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec']
 

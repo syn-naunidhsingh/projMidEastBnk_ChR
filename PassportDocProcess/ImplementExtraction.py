@@ -1,4 +1,4 @@
-from ManageJson import json_names
+from InterfaceManage import json_names
 import datetime
 
 def formatPassportEyeData(mrzData):

@@ -1,7 +1,7 @@
 
 from match_name import match_name_strings, match_visa_no_strings
 
-from ManageJson import json_names
+from InterfaceManage import json_names
 
 __EID_COMPARE_THRESHOLD__ = 0.6
 

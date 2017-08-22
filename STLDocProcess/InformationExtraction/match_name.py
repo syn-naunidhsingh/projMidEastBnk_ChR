@@ -1,5 +1,5 @@
 import editdistance
-from ManageJson import json_names
+from InterfaceManage import json_names
 
 __SALS__ = ["Mr", "Mrs", "Miss", "Ms", "Dr", "Pr"]
 

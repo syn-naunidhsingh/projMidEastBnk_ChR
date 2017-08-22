@@ -4,7 +4,7 @@ from os import environ
 from flask import Flask, request, jsonify
 # json imports
 import json
-from ManageJson import json_names, getResponseError
+from InterfaceManage import json_names, getResponseError
 # Passport document process imports
 import PassportDocProcess
 # EID document process imports

@@ -1,7 +1,7 @@
 import cv2
 from ImagePreproces import imageBase64 as convrt
 from PreProcess import preProcessROICrop, preProcessImageEnhance
-from ManageJson import getResponseError
+from InterfaceManage import getResponseError
 from ImplementExtraction import getVisaTextExtraction
 
 def processCamUploadImage(b64_Filedata):

@@ -1,7 +1,7 @@
 
 import pytesseract
 from PIL import Image
-from ManageJson import json_names
+from InterfaceManage import json_names
 
 
 

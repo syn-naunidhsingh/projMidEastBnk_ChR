@@ -4,7 +4,7 @@ import passporteye
 import numpy
 from ImagePreproces import imageBase64 as convrt
 from ImplementExtraction import formatPassportEyeData
-from ManageJson import getResponseError
+from InterfaceManage import getResponseError
 from PreProcess import preprocessCamUpload, preprocessFileUpload
 
 def processCamUploadImage(b64_Filedata):
