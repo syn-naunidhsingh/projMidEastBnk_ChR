@@ -126,7 +126,7 @@ def getVisaROI(cvImage):
     # Step 3 : Again detect the face ROI and the barcode ROI
     #          The face and barcode ROIs may get distorted while rotating the image with padding
 
-    faceRect = getFaceROI(cvImage)
+    faceRect = face_detection.getFaceROI(cvImage)
     barcodeRect, angle = getBarcodeBox(cvImage)
     if faceRect is None or barcodeRect is None:
         return None

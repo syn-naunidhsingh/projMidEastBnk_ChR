@@ -6,7 +6,7 @@ __OUT_RESP_ERR_MESG__ = "message"
 # Error codes
 __ERROR_CODE_DICT__ = {
 
-    0100: "Unable to process the document, please try again",
+    0100: "Unable to process the document",
     1000: "Looks like i can not recognize your Passport. please try again",
     1001: "Sorry your Passport is not clear enough. please try again",
     1004: "Your passport is already expired.",
